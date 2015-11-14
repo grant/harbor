@@ -2,8 +2,8 @@ var _ = require('lodash');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
-var OAuthStrategy = require('passport-oauth').OAuthStrategy;
-var OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
+//var OAuthStrategy = require('passport-oauth').OAuthStrategy;
+//var OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 
 var secrets = require('./secrets');
 var User = require('../models/User');
@@ -121,45 +121,9 @@ passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, r
 /**
  * Foursquare API OAuth.
  */
-passport.use('foursquare', new OAuth2Strategy({
-    authorizationURL: 'https://foursquare.com/oauth2/authorize',
-    tokenURL: 'https://foursquare.com/oauth2/access_token',
-    clientID: secrets.foursquare.clientId,
-    clientSecret: secrets.foursquare.clientSecret,
-    callbackURL: secrets.foursquare.redirectUrl,
-    passReqToCallback: true
-  },
-  function(req, accessToken, refreshToken, profile, done) {
-    User.findById(req.user._id, function(err, user) {
-      user.tokens.push({ kind: 'foursquare', accessToken: accessToken });
-      user.save(function(err) {
-        done(err, user);
-      });
-    });
-  }
-));
-
 /**
  * Venmo API OAuth.
  */
-passport.use('venmo', new OAuth2Strategy({
-    authorizationURL: 'https://api.venmo.com/v1/oauth/authorize',
-    tokenURL: 'https://api.venmo.com/v1/oauth/access_token',
-    clientID: secrets.venmo.clientId,
-    clientSecret: secrets.venmo.clientSecret,
-    callbackURL: secrets.venmo.redirectUrl,
-    passReqToCallback: true
-  },
-  function(req, accessToken, refreshToken, profile, done) {
-    User.findById(req.user._id, function(err, user) {
-      user.tokens.push({ kind: 'venmo', accessToken: accessToken });
-      user.save(function(err) {
-        done(err, user);
-      });
-    });
-  }
-));
-
 /**
  * Login Required middleware.
  */
