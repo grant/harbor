@@ -2773,24 +2773,23 @@ section.bad.news .stat aside {
   font-style: italic;
 }
 
-section.good.news {
-  height: 400px;
+section.good.news, section.better.news {
+  height: 450px;
   overflow: hidden;
 }
 
-section.good.news .left, section.good.news .right {
+section.good.news .left, section.good.news .right, section.better.news .left, section.better.news .right {
   display: inline-block;
   vertical-align: top;
 }
 
-section.good.news .left {
-  background: url("/img/image1.png");
+section.good.news .left, section.better.news .left {
   background-size: cover;
   width: 60%;
   height: 100%;
 }
 
-section.good.news .right {
+section.good.news .right, section.better.news .right {
   width: 40%;
   height: 100%;
   background-color: #d8d8d8;
@@ -2798,7 +2797,7 @@ section.good.news .right {
   padding: 60px;
 }
 
-section.good.news .right .title {
+section.good.news .right .title, section.better.news .right .title {
   text-transform: uppercase;
   color: #ee566f;
   font-size: 18px;
@@ -2806,17 +2805,76 @@ section.good.news .right .title {
   padding: 50px 0;
 }
 
-section.good.news .right p {
+section.good.news .right p, section.better.news .right p {
   color: #1f2e79;
   font-weight: 800;
 }
 
+section.good.news .left {
+  background-image: url("/img/image1.png");
+}
+
+section.better.news .right .title {
+  padding-top: 20px;
+}
+
+section.better.news .left {
+  background-image: url("/img/image2.png");
+}
+
+section.better.news .star {
+  width: 70%;
+}
+
 section.intro {
   text-align: center;
+  padding: 30px 0;
 }
 
 section.intro img.section-img {
   width: 1000px;
+}
+
+section.ready-to {
+  background-color: #1f2e79;
+  text-align: center;
+  padding: 30px;
+}
+
+section.ready-to h2.title {
+  text-transform: uppercase;
+  color: #ee566f;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 30px;
+}
+
+section.ready-to h3.title {
+  text-transform: uppercase;
+  font-weight: 300;
+  color: white;
+  font-size: 30px;
+  padding-bottom: 50px;
+}
+
+section.ready-to .email-box {
+  padding: 5px 5px 8px 5px;
+  background: #ee566f;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+section.ready-to .email-box input[type='email'] {
+  border: 0;
+  padding: 5px;
+  font-size: 30px;
+}
+
+section.ready-to .email-box input[type='button'] {
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
 }
 
 html {
@@ -2836,4 +2894,13 @@ html, body {
 
 h1, h2, h3, h4, h5 {
   margin: 0;
+}
+
+input[type='button'] {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }

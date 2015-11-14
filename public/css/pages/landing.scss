@@ -97,8 +97,8 @@ section.bad.news {
   }
 }
 
-section.good.news {
-  height: 400px;
+section.good.news, section.better.news {
+  height: 450px;
   overflow: hidden;
 
   .left, .right {
@@ -106,7 +106,6 @@ section.good.news {
     vertical-align: top;
   }
   .left {
-    background: url('/img/image1.png');
     background-size: cover;
     width: 60%;
     height: 100%;
@@ -130,9 +129,68 @@ section.good.news {
   }
 }
 
+section.good.news {
+  .left {
+    background-image: url('/img/image1.png');
+  }
+}
+section.better.news {
+  .right {
+    .title {
+      padding-top: 20px;
+    }
+  }
+  .left {
+    background-image: url('/img/image2.png');
+  }
+  .star {
+    width: 70%;
+  }
+}
+
 section.intro {
   text-align: center;
+  padding: 30px 0;
+
   img.section-img {
     width: $content-width + 100px;
+  }
+}
+
+section.ready-to {
+  background-color: $blue;
+  text-align: center;
+  padding: 30px;
+
+  h2.title {
+    @include small-title()
+    padding: 30px;
+  }
+  h3.title {
+    text-transform: uppercase;
+    font-weight: 300;
+    color: white;
+    font-size: 30px;
+    padding-bottom: 50px;
+  }
+
+  .email-box {
+    padding: 5px 5px 8px 5px;
+    background: $red;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: middle;
+
+    input[type='email'] {
+      border: 0;
+      padding: 5px;
+      font-size: 30px;
+    }
+
+    input[type='button'] {
+      font-size: 20px;
+      color: white;
+      text-transform: uppercase;
+    }
   }
 }
