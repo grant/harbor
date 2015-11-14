@@ -2690,7 +2690,7 @@ section.splash {
   padding-top: 120px;
   padding-left: 20px;
   color: #1f2e79;
-  min-height: 800px;
+  min-height: 90%;
 }
 
 section.splash .logo {
