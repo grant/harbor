@@ -50,8 +50,8 @@ module.exports = {
   },
 
   facebook: {
-    clientID: process.env.FACEBOOK_ID || '754220301289665',
-    clientSecret: process.env.FACEBOOK_SECRET || '41860e58c256a3d7ad8267d3c1939a4a',
+    clientID: process.env.FACEBOOK_ID || '1515818668730598',
+    clientSecret: process.env.FACEBOOK_SECRET || '4f810580bf169e261757427b5f050b54',
     callbackURL: '/auth/facebook/callback',
     passReqToCallback: true
   },
