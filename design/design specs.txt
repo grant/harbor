@@ -1,0 +1,2 @@
+font: use Lato from google fonts
+colors: red - #EE566F, blur - #1F2E79, green - #50E3C2
