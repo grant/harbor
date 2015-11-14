@@ -6,7 +6,7 @@ block content
     .dash
     .subtitle
       h2
-        span College
+        span College Girls'
         em  Party
         span  Safety Kit
     .cta
@@ -28,7 +28,7 @@ block content
     .left.img
     aside.right
       h3.title Good News:
-      p HARBOR does its best to protect college students before parties, during parties, &amp; after parties.
+      p HARBOR does its best to protect college girls before parties, during parties, &amp; after parties.
   section.intro
     img.section-img(src='/img/Section3.png')
   section.better.news
