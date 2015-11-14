@@ -156,8 +156,8 @@ app.post('/api/bitcore', apiController.postBitcore);
  * OAuth authentication routes. (Sign in)
  */
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
-app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/contact' }), function(req, res) {
-  res.redirect('/contact');
+app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/app' }), function(req, res) {
+  res.redirect('/app');
 });
 
 /**
