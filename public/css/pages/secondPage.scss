@@ -14,10 +14,8 @@ section.splash {
   border-top: 20px solid $red;
   background: linear-gradient(rgb(9, 60, 120), rgb(211, 222, 233));
   text-align: center;
-  padding-top: 120px;
-  padding-left:20px;
+  padding: 20px;
   color: $blue;
-  min-height:800px;
 
   .logo {
     width: 50%;
@@ -42,25 +40,10 @@ section.splash {
     color: $red;
   }
 
-  button {
-    font-family: Lato;
-    background-color: $blue;
-    color: white; 
-    border-radius: 20px 20px 20px 20px;
-    border: 0px solid #000000;
-    min-height: 50px;
-    font-size: 20px;
-    padding:10px 30px 10px 30px;
-  }
 
-  .cta {
-    padding-top:80px;
-  }
 }
 
 section.bad.news {
-  padding-top:15%;
-  padding-bottom:15%;
   padding: 30px;
   background: $blue;
 
@@ -204,6 +187,7 @@ section.ready-to {
       border: 0;
       padding: 5px;
       font-size: 30px;
+
     }
 
     input[type='button'] {

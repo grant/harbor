@@ -2687,8 +2687,10 @@ section.splash {
   border-top: 20px solid #ee566f;
   background: linear-gradient(#093c78, #d3dee9);
   text-align: center;
-  padding: 20px;
+  padding-top: 120px;
+  padding-left: 20px;
   color: #1f2e79;
+  min-height: 800px;
 }
 
 section.splash .logo {
@@ -2714,7 +2716,24 @@ section.splash em {
   color: #ee566f;
 }
 
+section.splash button {
+  font-family: Lato;
+  background-color: #1f2e79;
+  color: white;
+  border-radius: 20px 20px 20px 20px;
+  border: 0px solid #000000;
+  min-height: 50px;
+  font-size: 20px;
+  padding: 10px 30px 10px 30px;
+}
+
+section.splash .cta {
+  padding-top: 80px;
+}
+
 section.bad.news {
+  padding-top: 15%;
+  padding-bottom: 15%;
   padding: 30px;
   background: #1f2e79;
 }
