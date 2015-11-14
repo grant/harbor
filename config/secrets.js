@@ -56,6 +56,11 @@ module.exports = {
     passReqToCallback: true
   },
 
+  twilio: {
+    accountSid: AC8f77ea7aa2238a23b4ccf2893dec9c72,
+    authToken: c8c8fd8f5e5ccb5a223a415e9603c900,
+  },
+
   bitgo: {
     accessToken: process.env.BITGO_ACCESS_TOKEN || '4fca3ed3c2839be45b03bbd330e5ab1f9b3989ddd949bf6b8765518bc6a0e709'
   },
