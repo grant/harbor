@@ -10,6 +10,45 @@ $content-width: 900px;
   font-weight: 800;
 }
 
+section.header {
+  background: white;
+  text-align: center;
+  padding-top: 20px;
+  padding-left:auto;
+  padding-right:auto;
+  height:15%;
+
+  .logo {
+    width:20%;
+  }
+}
+
+section.main{
+  min-height: 85%;
+  text-align: center;
+  background: $red;
+
+  .character {
+    padding-top:10px;
+    width:35%;
+  }
+
+  .title {
+    padding-top:40px;
+    text-weight:700;
+    color: white;
+  }
+
+  form {
+    border-radius: 20px 20px 20px 20px;
+    border: 2px solid #fff;
+    margin-top: 20px;
+    margin-left:20%;
+    margin-right:20%;
+    margin-bottom:30px;
+    padding: 20px;
+  }
+}
 section.splash {
   border-top: 20px solid $red;
   background: linear-gradient(rgb(9, 60, 120), rgb(211, 222, 233));

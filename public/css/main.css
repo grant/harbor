@@ -2683,6 +2683,46 @@
   transition: all 0.2s linear;
 }
 
+section.header {
+  background: white;
+  text-align: center;
+  padding-top: 20px;
+  padding-left: auto;
+  padding-right: auto;
+  height: 15%;
+}
+
+section.header .logo {
+  width: 20%;
+}
+
+section.main {
+  min-height: 85%;
+  text-align: center;
+  background: #ee566f;
+}
+
+section.main .character {
+  padding-top: 10px;
+  width: 35%;
+}
+
+section.main .title {
+  padding-top: 40px;
+  text-weight: 700;
+  color: white;
+}
+
+section.main form {
+  border-radius: 20px 20px 20px 20px;
+  border: 2px solid #fff;
+  margin-top: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
 section.splash {
   border-top: 20px solid #ee566f;
   background: linear-gradient(#093c78, #d3dee9);
@@ -2690,7 +2730,7 @@ section.splash {
   padding-top: 120px;
   padding-left: 20px;
   color: #1f2e79;
-  min-height: 800px;
+  min-height: 90%;
 }
 
 section.splash .logo {
