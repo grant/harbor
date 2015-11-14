@@ -1,0 +1,199 @@
+$red: rgb(238, 86, 111);
+$blue: rgb(31, 46, 121);
+$gray: rgb(216, 216, 216);
+$content-width: 900px;
+
+@mixin small-title() {
+  text-transform: uppercase;
+  color: $red;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+section.splash {
+  border-top: 20px solid $red;
+  background: linear-gradient(rgb(9, 60, 120), rgb(211, 222, 233));
+  text-align: center;
+  padding: 20px;
+  color: $blue;
+
+  .logo {
+    width: 50%;
+  }
+
+  .dash {
+    width: 12%;
+    height: 10px;
+    background: $red;
+    margin: 20px auto;
+    border-radius: 5px;
+  }
+
+  .subtitle {
+    font-size: 26px;
+    font-style: italic;
+    letter-spacing: 2px;
+    padding: 20px 0;
+  }
+
+  em {
+    color: $red;
+  }
+
+
+}
+
+section.bad.news {
+  padding: 30px;
+  background: $blue;
+
+  .title {
+    @include small-title()
+    padding: 30px;
+    text-align: center;
+  }
+
+  .stat {
+    padding: 20px;
+    width: $content-width;
+    margin: 0 auto;
+
+    .left, .right {
+      display: inline-block;
+    }
+
+    .percent {
+      font-weight: 400;
+      font-size: 140px;
+      color: $red;
+      width: 40%;
+      text-align: center;
+    }
+
+    .right {
+      padding-left: 20px;
+      color: white;
+      font-weight: 300;
+      width: 60%;
+
+      p {
+        margin: 5px 0;
+        font-size: 20px;
+        line-height: 200%
+      }
+
+      em {
+        font-weight: 100;
+        color: $red;
+      }
+    }
+
+    aside {
+      padding-top: 30px;
+      color: white;
+      font-size: 14px;
+      font-weight: 100;
+      text-align: right;
+      font-style: italic;
+    }
+  }
+}
+
+section.good.news, section.better.news {
+  height: 450px;
+  overflow: hidden;
+
+  .left, .right {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .left {
+    background-size: cover;
+    width: 60%;
+    height: 100%;
+  }
+  .right {
+    width: 40%;
+    height: 100%;
+    background-color: $gray;
+    text-align: center;
+    padding: 60px;
+
+    .title {
+      @include small-title()
+      padding: 50px 0;
+    }
+
+    p {
+      color: $blue;
+      font-weight: 800;
+    }
+  }
+}
+
+section.good.news {
+  .left {
+    background-image: url('/img/image1.png');
+  }
+}
+section.better.news {
+  .right {
+    .title {
+      padding-top: 20px;
+    }
+  }
+  .left {
+    background-image: url('/img/image2.png');
+  }
+  .star {
+    width: 70%;
+  }
+}
+
+section.intro {
+  text-align: center;
+  padding: 30px 0;
+
+  img.section-img {
+    width: $content-width + 100px;
+  }
+}
+
+section.ready-to {
+  background-color: $blue;
+  text-align: center;
+  padding: 30px;
+
+  h2.title {
+    @include small-title()
+    padding: 30px;
+  }
+  h3.title {
+    text-transform: uppercase;
+    font-weight: 300;
+    color: white;
+    font-size: 30px;
+    padding-bottom: 50px;
+  }
+
+  .email-box {
+    padding: 5px 5px 8px 5px;
+    background: $red;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: middle;
+
+    input[type='email'] {
+      border: 0;
+      padding: 5px;
+      font-size: 30px;
+
+    }
+
+    input[type='button'] {
+      font-size: 20px;
+      color: white;
+      text-transform: uppercase;
+    }
+  }
+}
