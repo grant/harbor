@@ -33,6 +33,6 @@ function makeTwilioCall(to, message) {
 	});
 }
 
-exports.twilioText = twilioText;
+exports.sendTwilioText = sendTwilioText;
 exports.checkTwilioText = checkTwilioText;
 exports.makeTwilioCall = makeTwilioCall;

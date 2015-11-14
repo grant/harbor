@@ -57,8 +57,8 @@ module.exports = {
   },
 
   twilio: {
-    accountSid: AC8f77ea7aa2238a23b4ccf2893dec9c72,
-    authToken: c8c8fd8f5e5ccb5a223a415e9603c900,
+    accountSid: 'AC8f77ea7aa2238a23b4ccf2893dec9c72',
+    authToken: 'c8c8fd8f5e5ccb5a223a415e9603c900',
   },
 
   bitgo: {
