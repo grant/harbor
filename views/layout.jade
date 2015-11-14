@@ -6,15 +6,16 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(name='csrf-token', content=_csrf)
     title #{title} - Hackathon Starter
+    link(href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic,900,900italic' rel='stylesheet' type='text/css')
     link(rel='stylesheet', href='/css/main.css')
   body
-    include partials/header
+    //- include partials/header
 
     .container
       include partials/flash
       block content
 
-    include partials/footer
+    //- include partials/footer
 
     script(src='/js/lib/jquery.min.js')
     script(src='/js/lib/bootstrap.min.js')

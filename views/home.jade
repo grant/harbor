@@ -1,27 +1,50 @@
 extends layout
 
 block content
-  h1 Hackathon Starter
-  p.lead A boilerplate for Node.js web applications.
-  hr
-  .row
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+  section.splash
+    .main-title
+      img.logo(src='/img/logo.png')
+    .subtitle
+      h2
+        span College Girls'
+        em  Party
+        span  Safety Kit
+    .cta
+      button.signin Sign in
+      button.signup Sign up
+  section.bad.news
+    h3.title Bad News:
+    .stat
+      h1.percent 23%
+      p female college students said they experienced some form of unwanted sexual contact.
       p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
+        em 32%
+        span  at Yale and
+        em  29%
+        span  at Harvard.
+    aside Association of American Universities (AAU), 2015
+  section.good.news
+    img.full(src='/img/look.png')
+    aside.right
+      h3.title Good News:
+      p HARBOR does its best to protect college girls before parties, during parties, &amp; after parties.
+  section.intro
+    h3.title Introducing
+    h1.harbor Harbor
+    img.checks-img(src='/img/checks.png')
+    .checks
+      .left Safety Check-ins
+      .mid Emergency Calls
+      .right Voice to Text Messages
+  section.better.news
+    img.full(src='/img/shoes.png')
+    aside.right
+      h3.title Better News:
+      img.star(src='/img/star.png')
+      p Equipped with HARBOR, now you are ready to go.
+  section.ready-to
+    h3.title Ready to?
+    h2.title Create your Harbor
+    .email-box
+      input(type='textbox')
+      input(type='button' value='submit')
