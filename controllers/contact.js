@@ -23,9 +23,9 @@ exports.getContact = function(req, res) {
  * Send a contact form via Nodemailer.
  */
 exports.postContact = function(req, res) {
-  req.assert('name', 'Name cannot be blank').notEmpty();
-  req.assert('email', 'Email is not valid').isEmail();
-  req.assert('message', 'Message cannot be blank').notEmpty();
+  req.assert('myPhone', 'Cannot be blank').notEmpty();
+  req.assert('Emergency1', 'Not a Real Number').nonEmpty();
+  req.assert('Emergency2', 'Not a Real Number').notEmpty();
 
   var errors = req.validationErrors();
 
