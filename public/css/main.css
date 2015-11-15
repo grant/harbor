@@ -2771,6 +2771,14 @@ section.main form {
   padding: 20px;
 }
 
+section.main div.container {
+  border: 2px solid #fff;
+}
+
+section.main div.row {
+  border: 2px solid #fff;
+}
+
 section.splash {
   border-top: 20px solid #ee566f;
   background: linear-gradient(#093c78, #d3dee9);

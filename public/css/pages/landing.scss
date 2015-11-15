@@ -93,6 +93,12 @@ section.main{
     margin-bottom:30px;
     padding: 20px;
   }
+  div.container {
+    border: 2px solid #fff;
+  }
+  div.row {
+    border: 2px solid #fff;
+  }
 }
 section.splash {
   border-top: 20px solid $red;
