@@ -51,7 +51,7 @@ section.main{
   }
 
   .title.tall {
-    padding-top:140px;
+    padding-top: 40px;
   }
 
   .buttonGroup {
@@ -64,7 +64,7 @@ section.main{
   .buttonGroup button {
     font-family: Lato;
     background-color: rgba(0,0,0,0);
-    color: white; 
+    color: white;
     border-radius: 20px 20px 20px 20px;
     border: 2px solid #fff;
     min-height: 50px;
@@ -74,7 +74,7 @@ section.main{
   .buttonGroup button:hover {
     font-family: Lato;
     background-color: white;
-    color: $red; 
+    color: $red;
     border-radius: 20px 20px 20px 20px;
     border: 2px solid #fff;
     min-height: 50px;
@@ -114,7 +114,7 @@ section.main{
   button.btn-round {
     font-family: Lato;
     background-color: white;
-    color: $red; 
+    color: $red;
     border-radius: 100px;
     border: 2px solid #fff;
     height: 80px;
@@ -124,8 +124,8 @@ section.main{
   }
   button.btn-round:hover {
     background-color: $red;
-    color: white; 
-    -webkit-transition: 0.5s; 
+    color: white;
+    -webkit-transition: 0.5s;
   }
 }
 section.splash {
@@ -163,7 +163,7 @@ section.splash {
   button {
     font-family: Lato;
     background-color: $blue;
-    color: white; 
+    color: white;
     border-radius: 20px 20px 20px 20px;
     border: 0px solid #000000;
     min-height: 50px;
@@ -329,5 +329,14 @@ section.ready-to {
       color: white;
       text-transform: uppercase;
     }
+  }
+}
+
+// Party today?
+.main.party {
+  .profile {
+    display: block;
+    padding: 20px;
+    margin: 0 auto;
   }
 }
