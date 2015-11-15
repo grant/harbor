@@ -53,6 +53,16 @@ app.get('/results', results);
 var app = express();
 
 /**
+ * Twilio webhook routes
+ */
+app.post('/voice', voice.interview);
+app.post('/voice/:responseId/transcribe/:questionIndex', voice.transcription);
+app.post('/message', message);
+
+//aggregate response data
+app.get('/results', results);
+
+/**
  * Connect to MongoDB.
  */
 mongoose.connect(secrets.db);
@@ -133,11 +143,6 @@ app.get('/account/unlink/:provider', passportConf.isAuthenticated, userControlle
  * API examples routes.
  */
 app.get('/api', apiController.getApi);
-app.get('/api/lastfm', apiController.getLastfm);
-app.get('/api/nyt', apiController.getNewYorkTimes);
-app.get('/api/aviary', apiController.getAviary);
-app.get('/api/steam', apiController.getSteam);
-app.get('/api/scraping', apiController.getScraping);
 app.get('/api/twilio', apiController.getTwilio);
 app.post('/api/twilio', apiController.postTwilio);
 app.get('/api/facebook', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getFacebook);
