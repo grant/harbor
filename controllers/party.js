@@ -1,3 +1,5 @@
+var partyModel = require('../models/party');
+
 /**
  * GET /
  * Party page.
@@ -9,8 +11,8 @@ exports.getParty = function(req, res) {
   });
 };
 
-
 exports.getPartyYes = function(req, res) {
+  partyModel.startParty(req.user._id);
   res.render('partyYes', {
     title: 'PartyYes'
   });
