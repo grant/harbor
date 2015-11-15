@@ -27,6 +27,21 @@ function checkTwilioText() {
 	});
 }
 
+function getTwilioTranscripts() {
+	client.transcriptions.list(function(err, data) {
+    data.transcriptions.forEach(function(transcription) {
+    	processTwilioTranscript(transcription);
+    });
+	});
+}
+
+function processTwilioTranscript(transcriptObj) {
+	app.find('Contacts', {'phone': transcriptObj.call.to}, function(err, response) {
+		app.update('Contacts', response.id, 
+			{'response': transcriptObj.TranscriptionText});
+	});
+}
+
 function makeTwilioCall(to, message) {
 	client.calls.create({
     to:to,
@@ -34,6 +49,7 @@ function makeTwilioCall(to, message) {
     url: "/voice.xml",
     statusCallback: "https://www.myapp.com/voice",
     statusCallbackMethod: "POST",
+    statusCallbackEvent: ["completed"],
 	}, function(err, responseData) {
 	    console.log(responseData.from);
 	});
@@ -42,3 +58,4 @@ function makeTwilioCall(to, message) {
 exports.sendTwilioText = sendTwilioText;
 exports.checkTwilioText = checkTwilioText;
 exports.makeTwilioCall = makeTwilioCall;
+exports.getTwilioTranscripts = getTwilioTranscripts;
