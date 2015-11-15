@@ -93,11 +93,39 @@ section.main{
     margin-bottom:30px;
     padding: 20px;
   }
-  div.container {
-    border: 2px solid #fff;
+  .form-group {
+    padding-top: 3%;
+    padding-right:10%;
+    padding-left:10%;
+    padding-bottom:3%;
   }
-  div.row {
+  label {
+    color: white;
+    float: left;
+  }
+  input.form-control {
+    float: right;
+    height: 30px;
+    border-radius: 20px 20px 20px 20px;
+    border: 0px solid #000000;
+    text-size: 20px;
+    text-family: Lato;
+  }
+  button.btn-round {
+    font-family: Lato;
+    background-color: white;
+    color: $red; 
+    border-radius: 100px;
     border: 2px solid #fff;
+    height: 80px;
+    width: 80px;
+    font-size: 20px;
+    padding:10px;
+  }
+  button.btn-round:hover {
+    background-color: $red;
+    color: white; 
+    -webkit-transition: 0.5s; 
   }
 }
 section.splash {
