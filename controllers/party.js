@@ -9,6 +9,14 @@ exports.getParty = function(req, res) {
 };
 
 
-exports.app = function(req, res) {
-  res.render('app', {});
+exports.getPartyYes = function(req, res) {
+  res.render('partyYes', {
+    title: 'PartyYes'
+  });
+};
+
+exports.getModeHappy = function(req, res) {
+  res.render('modeHappy', {
+    title: 'ModeHappy'
+  });
 };
