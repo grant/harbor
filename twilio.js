@@ -131,4 +131,3 @@ function transcription(request, response) {
 exports.sendTwilioText = sendTwilioText;
 exports.checkTwilioText = checkTwilioText;
 exports.makeTwilioCall = makeTwilioCall;
-exports.createServer = createServer;

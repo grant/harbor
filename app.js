@@ -55,12 +55,14 @@ var app = express();
 /**
  * Twilio webhook routes
  */
-// app.post('/voice', voice.interview);
-// app.post('/voice/:responseId/transcribe/:questionIndex', voice.transcription);
-// app.post('/message', message);
+ 
+var voice = require('./routes/voice');
+var message = require('./routes/message');
+app.post('/voice', voice.interview);
+app.post('/voice/:responseId/transcribe/:questionIndex', voice.transcription);
+app.post('/message', message);
 
 //aggregate response data
-// app.get('/results', results);
 
 /**
  * Connect to MongoDB.
