@@ -1,6 +1,6 @@
 
 function getMyPhone() {
-    var nameField = document.getElementById('myphone').value;
+    var nameField = document.getElementById('phone').value;
     var result = document.getElementById('result');
     if(nameField.length!=10){
        result.textContent='Not a Real Number';
@@ -27,7 +27,7 @@ subButton2.addEventListener('click', getEmergency1, false);
 
 
 function getEmergency2() {
-    var nameField = document.getElementById('myphone').value;
+    var nameField = document.getElementById('phone').value;
     var result = document.getElementById('result');
     if(nameField.length!=10){
        result.textContent='Not a Real Number';

@@ -41,6 +41,7 @@
     "morgan": "^1.6.1",
     "node-foursquare": "^0.3.0",
     "node-linkedin": "^0.5.1",
+    "node-parse-api": "^0.3.8",
     "node-sass-middleware": "^0.9.7",
     "nodemailer": "^1.8.0",
     "passport": "0.3.0",

@@ -23,9 +23,9 @@ exports.getContact = function(req, res) {
  * Send a contact form via Nodemailer.
  */
 exports.postContact = function(req, res) {
-  req.assert('myPhone', 'Cannot be blank').notEmpty();
-  req.assert('Emergency1', 'Not a Real Number').nonEmpty();
-  req.assert('Emergency2', 'Not a Real Number').notEmpty();
+  req.assert('phone', 'Cannot be blank').notEmpty();
+  req.assert('emergency1', 'Not a Real Number').notEmpty();
+  req.assert('emergency2', 'Not a Real Number').notEmpty();
 
   var errors = req.validationErrors();
 
@@ -34,25 +34,12 @@ exports.postContact = function(req, res) {
     return res.redirect('/contact');
   }
 
-  var from = req.body.email;
-  var name = req.body.name;
-  var body = req.body.message;
-  var to = 'your@email.com';
-  var subject = 'Contact Form | Hackathon Starter';
+  var phone = req.body.phone;
+  var emergency1 = req.body.emergency1;
+  var emergency2 = req.body.emergency2;
 
-  var mailOptions = {
-    to: to,
-    from: from,
-    subject: subject,
-    text: body
-  };
+  // save
 
-  transporter.sendMail(mailOptions, function(err) {
-    if (err) {
-      req.flash('errors', { msg: err.message });
-      return res.redirect('/contact');
-    }
-    req.flash('success', { msg: 'Email has been sent successfully!' });
-    res.redirect('/contact');
-  });
+  res.redirect('/party');
 };
+
