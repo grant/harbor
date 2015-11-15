@@ -13,6 +13,11 @@ var app = new Parse(APP_ID, MASTER_KEY);
 //   });
 // });
 
+
+// userId - user id
+// phone - user phone number
+// emergency1 - emergency phone number 1
+// emergency2 - emergency phone number 2
 module.exports.saveContacts = function(data, cb) {
   app.insert('Contacts', data, function (err, res) {
     cb(err, res);
