@@ -4,7 +4,8 @@
  */
 exports.getParty = function(req, res) {
   res.render('party', {
-    title: 'Party'
+    title: 'Party',
+    profile: req.user.profile.picture
   });
 };
 

@@ -13,4 +13,8 @@ var app = new Parse(APP_ID, MASTER_KEY);
 //   });
 // });
 
-// module.export({})
+module.exports.saveContacts = function(data, cb) {
+  app.insert('Contacts', data, function (err, res) {
+    cb(err, res);
+  });
+};

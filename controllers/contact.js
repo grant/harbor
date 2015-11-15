@@ -7,6 +7,7 @@ var transporter = nodemailer.createTransport({
     pass: secrets.sendgrid.password
   }
 });
+var db = require('./parse');
 
 /**
  * GET /contact
@@ -39,7 +40,14 @@ exports.postContact = function(req, res) {
   var emergency2 = req.body.emergency2;
 
   // save
-
-  res.redirect('/party');
+  var userId = req.user._id;
+  db.saveContacts({
+    userId: userId,
+    phone: phone,
+    emergency1: emergency1,
+    emergency2: emergency2
+  }, function (err, response) {
+    res.redirect('/party');
+  });
 };
 

@@ -3,12 +3,12 @@ extends layout
 block content
   section.header
     img.logo(src='/img/logo+text.png')
-
   section.main
     img.character(src='img/character-party-no.png')
+    img.profile(src=profile)
     .title.tall
       h1 Are you going to a party today?
     .buttonGroup
       button.no NO
-      a(href='/partyYes') 
+      a(href='/partyYes')
         button.yes YES
