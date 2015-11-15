@@ -37,6 +37,16 @@ var secrets = require('./config/secrets');
 var passportConf = require('./config/passport');
 
 /**
+ * Twilio webhook routes
+ */
+app.post('/voice', voice.interview);
+app.post('/voice/:responseId/transcribe/:questionIndex', voice.transcription);
+app.post('/message', message);
+
+//aggregate response data
+app.get('/results', results);
+
+/**
  * Create Express server.
  */
 var app = express();
