@@ -27,6 +27,7 @@ var sass = require('node-sass-middleware');
  */
 var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
+var partyController = require('./controllers/party');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
@@ -111,6 +112,7 @@ app.get('/signup', userController.getSignup);
 app.post('/signup', userController.postSignup);
 app.get('/contact', contactController.getContact);
 app.post('/contact', contactController.postContact);
+app.get('/party', partyController.getParty);
 app.get('/account', passportConf.isAuthenticated, userController.getAccount);
 app.post('/account/profile', passportConf.isAuthenticated, userController.postUpdateProfile);
 app.post('/account/password', passportConf.isAuthenticated, userController.postUpdatePassword);
