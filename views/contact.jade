@@ -7,23 +7,22 @@ block content
   section.main
     img.character(src='img/character-contact.png')
     .title
-      h1 We nees some information…
+      h1 We need some information from you:
     form.form-horizontal(role='form', method='POST')
       input(type='hidden', name='_csrf', value=_csrf)
       .form-group
-        label(class='col-sm-2 control-label', for='name') Your Number
+        label(class='col-sm-2 control-label', for='phone') YOUR NUMBER:
         .col-sm-8
-          input.form-control(type='text', name='name', id='name', cols='20')
+          input.form-control(type='text', name='phone', id='phone', autofocus=true)
       .form-group
-        label(class='col-sm-2 control-label', for='name') Emergency Contact
+        label(class='col-sm-2 control-label', for='contactName') EMERGENCY CONTACT NAME:
         .col-sm-8
-          input.form-control(type='text', name='name', id='name')
+          input.form-control(type='text', name='contactName', id='contactName')
       .form-group
-        label(class='col-sm-2 control-label', for='name') Emergency Contact
+        label(class='col-sm-2 control-label', for='contactPhone') EMERGENCY CONTACT PHONE:
         .col-sm-8
-          input.form-control(type='text', name='name', id='name')
+          input.form-control(type='text', name='contactPhone', id='contactPhone')
       .form-group
         .col-sm-offset-2.col-sm-8
-          button.btn.btn-primary(type='submit')
-            i.fa.fa-envelope
-            | Send
+          button.btn-round(type='submit')
+            | NEXT

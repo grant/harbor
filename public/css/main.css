@@ -2771,12 +2771,43 @@ section.main form {
   padding: 20px;
 }
 
-section.main div.container {
-  border: 2px solid #fff;
+section.main .form-group {
+  padding-top: 3%;
+  padding-right: 10%;
+  padding-left: 10%;
+  padding-bottom: 3%;
 }
 
-section.main div.row {
+section.main label {
+  color: white;
+  float: left;
+}
+
+section.main input.form-control {
+  float: right;
+  height: 30px;
+  border-radius: 20px 20px 20px 20px;
+  border: 0px solid #000000;
+  text-size: 20px;
+  text-family: Lato;
+}
+
+section.main button.btn-round {
+  font-family: Lato;
+  background-color: white;
+  color: #ee566f;
+  border-radius: 100px;
   border: 2px solid #fff;
+  height: 80px;
+  width: 80px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+section.main button.btn-round:hover {
+  background-color: #ee566f;
+  color: white;
+  -webkit-transition: 0.5s;
 }
 
 section.splash {
