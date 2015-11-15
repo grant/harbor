@@ -1,98 +1,76 @@
-/*var mongoose = require('mongoose');
+// var Parse = require('node-parse-api').Parse;
+// var APP_ID = 'zAL9zruuX9Kt1gAtFwq85qMskdydT0bs74im9Wpu';
+// var MASTER_KEY = 'oHYOc2QbMYajacdbDdbfQpGl8IBvSlR6IGrBgQrB';
+// var app = new Parse(APP_ID, MASTER_KEY);
 
-// Define survey response model schema
-var SurveyResponseSchema = new mongoose.Schema({
-    // phone number of participant
-    phone: String,
+// // For the given phone number and survey, advance the survey to the next
+// // question
+// module.exports.advanceSurvey = function(args, cb) {
+//     var surveyData = args.survey;
+//     var phone = args.phone;
+//     var input = args.input;
+//     var surveyResponse;
 
-    // status of the participant's current survey response
-    complete: {
-        type: Boolean,
-        default: false
-    },
+//     // Find current incomplete survey
+//     app.find('Contacts', {'contact': {phone: phone, complete: false}}, function(error, response) {
+//         surveyResponse = response || {phone: phone};
+//         processInput();
+//     });
 
-    // record of answers
-    responses: [mongoose.Schema.Types.Mixed]
-});
+//     // fill in any answer to the current question, and determine next question
+//     // to ask
+//     function processInput() {
+//         // If we have input, use it to answer the current question
+//         var responseLength = surveyResponse.responses.length;
+//         var currentQuestion = surveyData[responseLength];
 
-// For the given phone number and survey, advance the survey to the next
-// question
-SurveyResponseSchema.statics.advanceSurvey = function(args, cb) {
-    var surveyData = args.survey;
-    var phone = args.phone;
-    var input = args.input;
-    var surveyResponse;
+//         // if there's a problem with the input, we can re-ask the same question
+//         function reask() {
+//             cb.call(surveyResponse, null, surveyResponse, responseLength);
+//         }
 
-    // Find current incomplete survey
-    SurveyResponse.findOne({
-        phone: phone,
-        complete: false
-    }, function(err, doc) {
-        surveyResponse = doc || new SurveyResponse({
-            phone: phone
-        });
-        processInput();
-    });
+//         // If we have no input, ask the current question again
+//         if (!input) return reask();
 
-    // fill in any answer to the current question, and determine next question
-    // to ask
-    function processInput() {
-        // If we have input, use it to answer the current question
-        var responseLength = surveyResponse.responses.length
-        var currentQuestion = surveyData[responseLength];
+//         // Otherwise use the input to answer the current question
+//         var questionResponse = {};
+//         if (currentQuestion.type === 'boolean') {
+//             // Anything other than '1' or 'yes' is a false
+//             var isTrue = input === '1' || input.toLowerCase() === 'yes';
+//             questionResponse.answer = isTrue;
+//         } else if (currentQuestion.type === 'number') {
+//             // Try and cast to a Number
+//             var num = Number(input);
+//             if (isNaN(num)) {
+//                 // don't update the survey response, return the same question
+//                 return reask();
+//             } else {
+//                 questionResponse.answer = num;
+//             }
+//         } else if (input.indexOf('http') === 0) {
+//             // input is a recording URL
+//             questionResponse.recordingUrl = input;
+//         } else {
+//             // otherwise store raw value
+//             questionResponse.answer = input;
+//         }
 
-        // if there's a problem with the input, we can re-ask the same question
-        function reask() {
-            cb.call(surveyResponse, null, surveyResponse, responseLength);
-        }
+//         // Save type from question
+//         questionResponse.type = currentQuestion.type;
+//         surveyResponse.responses.push(questionResponse);
 
-        // If we have no input, ask the current question again
-        if (!input) return reask();
+//         // If new responses length is the length of survey, mark as done
+//         if (surveyResponse.responses.length === surveyData.length) {
+//             surveyResponse.complete = true;
+//         }
 
-        // Otherwise use the input to answer the current question
-        var questionResponse = {};
-        if (currentQuestion.type === 'boolean') {
-            // Anything other than '1' or 'yes' is a false
-            var isTrue = input === '1' || input.toLowerCase() === 'yes';
-            questionResponse.answer = isTrue;
-        } else if (currentQuestion.type === 'number') {
-            // Try and cast to a Number
-            var num = Number(input);
-            if (isNaN(num)) {
-                // don't update the survey response, return the same question
-                return reask();
-            } else {
-                questionResponse.answer = num;
-            }
-        } else if (input.indexOf('http') === 0) {
-            // input is a recording URL
-            questionResponse.recordingUrl = input;
-        } else {
-            // otherwise store raw value
-            questionResponse.answer = input;
-        }
-
-        // Save type from question
-        questionResponse.type = currentQuestion.type;
-        surveyResponse.responses.push(questionResponse);
-
-        // If new responses length is the length of survey, mark as done
-        if (surveyResponse.responses.length === surveyData.length) {
-            surveyResponse.complete = true;
-        }
-
-        // Save response
-        surveyResponse.save(function(err) {
-            if (err) {
-                reask();
-            } else {
-                cb.call(surveyResponse, err, surveyResponse, responseLength+1);
-            }
-        });
-    }
-};
-
-// Export model
-var SurveyResponse = mongoose.model('SurveyResponse', SurveyResponseSchema);
-module.exports = SurveyResponse;
-*/
+//         // Save response
+//         surveyResponse.save(function(err) {
+//             if (err) {
+//                 reask();
+//             } else {
+//                 cb.call(surveyResponse, err, surveyResponse, responseLength+1);
+//             }
+//         });
+//     }
+// };
