@@ -22,4 +22,4 @@ According to <i>Association of American Universities (AAU), 2015</i>, <b>23%</b>
 ![Alt](https://s-media-cache-ak0.pinimg.com/originals/7d/b1/07/7db107c04c28d59d45060dd34871ee39.png)
 <br/ >
 <br/ >
-<h4>**So now, equipped with Harbor, you are ready to go!**</h4>
+<h4>Equipped with Harbor, now you are ready to go!</h4>
