@@ -20,3 +20,9 @@ exports.getModeHappy = function(req, res) {
     title: 'ModeHappy'
   });
 };
+
+exports.getModeWorried = function(req, res) {
+  res.render('modeWorried', {
+    title: 'ModeWorried'
+  });
+};

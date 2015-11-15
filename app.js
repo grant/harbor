@@ -137,6 +137,7 @@ app.post('/contact', contactController.postContact);
 app.get('/party', partyController.getParty);
 app.get('/partyYes', partyController.getPartyYes);
 app.get('/modeHappy', partyController.getModeHappy);
+app.get('/modeWorried', partyController.getModeWorried);
 app.get('/account', passportConf.isAuthenticated, userController.getAccount);
 app.post('/account/profile', passportConf.isAuthenticated, userController.postUpdateProfile);
 app.post('/account/password', passportConf.isAuthenticated, userController.postUpdatePassword);
