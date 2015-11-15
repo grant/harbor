@@ -2,7 +2,6 @@
 
 =======================
 <h2>A College Party Safety Kit</h2>
-<h4> http://www.harborsafety.org </h4>
 
 **What's the pitch?**   To Be A Safety Harbor for College Parties
 
