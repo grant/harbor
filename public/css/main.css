@@ -2697,7 +2697,7 @@ section.header .logo {
 }
 
 section.main {
-  min-height: 85%;
+  min-height: 700px;
   text-align: center;
   background: #ee566f;
 }
@@ -2711,6 +2711,43 @@ section.main .title {
   padding-top: 40px;
   text-weight: 700;
   color: white;
+}
+
+section.main .title.tall {
+  padding-top: 140px;
+}
+
+section.main .buttonGroup {
+  width: 50%;
+  margin-left: 25%;
+  margin-rigth: 25%;
+  padding-top: 5%;
+}
+
+section.main .buttonGroup button {
+  font-family: Lato;
+  background-color: transparent;
+  color: white;
+  border-radius: 20px 20px 20px 20px;
+  border: 2px solid #fff;
+  min-height: 50px;
+  font-size: 20px;
+  padding: 10px 30px 10px 30px;
+}
+
+section.main .buttonGroup button:hover {
+  font-family: Lato;
+  background-color: white;
+  color: #ee566f;
+  border-radius: 20px 20px 20px 20px;
+  border: 2px solid #fff;
+  min-height: 50px;
+  font-size: 20px;
+  padding: 10px 30px 10px 30px;
+}
+
+section.main .buttonGroup button.yes {
+  margin-left: 10%;
 }
 
 section.main form {
