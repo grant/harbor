@@ -45,7 +45,8 @@ exports.postContact = function(req, res) {
     userId: userId,
     phone: phone,
     emergency1: emergency1,
-    emergency2: emergency2
+    emergency2: emergency2,
+    complete: false,
   }, function (err, response) {
     res.redirect('/party');
   });

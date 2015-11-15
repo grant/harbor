@@ -1,36 +1,21 @@
-/*var mongoose = require('mongoose');
+//surveyresponse properties: advanceSurvey, _id, findbyid, responses, markModified
 
-// Define survey response model schema
-var SurveyResponseSchema = new mongoose.Schema({
-    // phone number of participant
-    phone: String,
+ var Parse = require('node-parse-api').Parse;
+ var APP_ID = 'zAL9zruuX9Kt1gAtFwq85qMskdydT0bs74im9Wpu';
+ var MASTER_KEY = 'oHYOc2QbMYajacdbDdbfQpGl8IBvSlR6IGrBgQrB';
+ var app = new Parse(APP_ID, MASTER_KEY);
 
-    // status of the participant's current survey response
-    complete: {
-        type: Boolean,
-        default: false
-    },
-
-    // record of answers
-    responses: [mongoose.Schema.Types.Mixed]
-});
-
-// For the given phone number and survey, advance the survey to the next
-// question
-SurveyResponseSchema.statics.advanceSurvey = function(args, cb) {
+ // For the given phone number and survey, advance the survey to the next
+ // question
+ module.exports.advanceSurvey = function(args, cb) {
     var surveyData = args.survey;
     var phone = args.phone;
     var input = args.input;
     var surveyResponse;
 
     // Find current incomplete survey
-    SurveyResponse.findOne({
-        phone: phone,
-        complete: false
-    }, function(err, doc) {
-        surveyResponse = doc || new SurveyResponse({
-            phone: phone
-        });
+    app.find('Contacts', {'contact': {phone: phone, complete: false}}, function(error, response) {
+        surveyResponse = response || {phone: phone};
         processInput();
     });
 
@@ -38,7 +23,7 @@ SurveyResponseSchema.statics.advanceSurvey = function(args, cb) {
     // to ask
     function processInput() {
         // If we have input, use it to answer the current question
-        var responseLength = surveyResponse.responses.length
+        var responseLength = surveyResponse.responses.length;
         var currentQuestion = surveyData[responseLength];
 
         // if there's a problem with the input, we can re-ask the same question
@@ -91,8 +76,3 @@ SurveyResponseSchema.statics.advanceSurvey = function(args, cb) {
         });
     }
 };
-
-// Export model
-var SurveyResponse = mongoose.model('SurveyResponse', SurveyResponseSchema);
-module.exports = SurveyResponse;
-*/

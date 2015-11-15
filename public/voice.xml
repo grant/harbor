@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Say voice="alice">How drunk are you?</Say>
+    <Record timeout ="10"></Record>
+    <Gather timeout="10" numDigits="1">
+        <Say voice="alice">Are you ok? Press 0 for yes or any number for no.</Say>
+    </Gather>
+    <Gather timeout="10" numDigits="1">
+        <Say voice="alice">Do you want to get a friend?</Say>
+    </Gather>
+</Response>

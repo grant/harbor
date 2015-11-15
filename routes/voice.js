@@ -3,7 +3,7 @@ var SurveyResponse = require('../models/SurveyResponse');
 var survey = require('../survey_data');
 
 // Main interview loop
-exports.interview = function(request, response) {
+exports.interview = function() {
     var phone = request.body.From;
     var input = request.body.RecordingUrl || request.body.Digits;
     var twiml = new twilio.TwimlResponse();
@@ -40,8 +40,8 @@ exports.interview = function(request, response) {
 
         // Add a greeting if this is the first question
         if (questionIndex === 0) {
-            say('Thank you for taking our survey. Please listen carefully '
-                + 'to the following questions.');
+            say('Thank you for taking our survey. Please listen carefully ' +
+                'to the following questions.');
         }
 
         // Otherwise, ask the next question
@@ -50,12 +50,12 @@ exports.interview = function(request, response) {
         // Depending on the type of question, we either need to get input via
         // DTMF tones or recorded speech
         if (question.type === 'text') {
-            say('Please record your response after the beep. '
-                + 'Press any key to finish.');
+            say('Please record your response after the beep. ' +
+                'Press any key to finish.');
             twiml.record({
                 transcribe: true,
-                transcribeCallback: '/voice/' + surveyResponse._id
-                    + '/transcribe/' + questionIndex,
+                transcribeCallback: '/voice/' + surveyResponse._id +
+                    '/transcribe/' + questionIndex,
                 maxLength: 60
             });
         } else if (question.type === 'boolean') {
@@ -66,8 +66,8 @@ exports.interview = function(request, response) {
             });
         } else {
             // Only other supported type is number
-            say('Enter the number using the number keys on your telephone.' 
-                + ' Press star to finish.');
+            say('Enter the number using the number keys on your telephone.' +
+                ' Press star to finish.');
             twiml.gather({
                 timeout: 10,
                 finishOnKey: '*'
@@ -87,13 +87,12 @@ exports.transcription = function(request, response) {
     var transcript = request.body.TranscriptionText;
 
     SurveyResponse.findById(responseId, function(err, surveyResponse) {
-        if (err || !surveyResponse || 
-            !surveyResponse.responses[questionIndex]) 
+        if (err || !surveyResponse ||
+            !surveyResponse.responses[questionIndex])
             return response.status(500).end();
 
         // Update appropriate answer field
         surveyResponse.responses[questionIndex].answer = transcript;
-        surveyResponse.markModified('responses');
         surveyResponse.save(function(err, doc) {
             return response.status(err ? 500 : 200).end();
         });
