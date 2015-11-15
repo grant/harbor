@@ -3,7 +3,7 @@ var SurveyResponse = require('../models/SurveyResponse');
 var survey = require('../survey_data');
 
 // Main interview loop
-exports.interview = function(request, response) {
+exports.interview = function() {
     var phone = request.body.From;
     var input = request.body.RecordingUrl || request.body.Digits;
     var twiml = new twilio.TwimlResponse();
@@ -93,7 +93,6 @@ exports.transcription = function(request, response) {
 
         // Update appropriate answer field
         surveyResponse.responses[questionIndex].answer = transcript;
-        surveyResponse.markModified('responses');
         surveyResponse.save(function(err, doc) {
             return response.status(err ? 500 : 200).end();
         });
