@@ -2,7 +2,7 @@
 
 =======================
 <h2>A College Party Safety Kit</h2>
-**Devpost Submission** http://devpost.com/software/harbor-7hbfag
+**Devpost Submission** http://devpost.com/software/harbor-7hbfag<br/ >
 **What's the pitch?**   To Be A Safety Harbor for College Parties
 
 **Why are we building it?**<br/ >
